@@ -1,0 +1,16 @@
+# Run Fluent design with the user's actual local Codex skills
+
+**Blocker in ChatGPT:** User-configured **local Codex settings/skill installation cannot be read or executed from this ChatGPT environment**. ChatGPT's plugin skill inventory is a different inventory. No design skill has been claimed as loaded or used.
+
+## Invocation inside Codex Desktop (open `ios3kov/fluent`)
+
+> Work on branch `feat/design-foundation` (do not overwrite any current uncommitted changes). Read `AGENTS.md`, `docs/PRODUCT_SPEC.md`, `docs/DESIGN_BRIEF.md`, then pinned AS Development Rules v7.0.0 / `AI_ENTRYPOINT.md` and only relevant modules. **Discover the design skills actually enabled in my local Codex settings**, including user and workspace scopes. For each relevant skill: inspect metadata, read its actual `SKILL.md` and necessary references, check origin/trust/scope according to AS v7.0.0, and use the applicable guidance in designing Fluent. Do not assume or invent skill names; do not install new skills or run third-party skill scripts without admission. First provide a concise inventory of applicable skills and what each concretely contributes. Then develop a first *functional SwiftUI* design prototype covering all six track options, card front/back, example, speech affordance, Know/Don't know, undo, level switch, review and empty/error states. Create two small visual approaches, select one with reasons derived from the actual skills, and put screenshots/previews and decision notes in `docs/UX_REVIEW.md`. Do not replace existing code blindly: inspect actual repository and import/merge the previously provided Fluent prototype source if available. Test domain and iOS build paths; report actual test results, Xcode/Simulator/iPhone status separately and never invent PASS. Preserve existing requirements: six routes, unlimited study, on-device progress, real-example/corpus licensing distinctions. No TestFlight/App Store/production release. Open/update the existing draft PR with the resulting evidence.
+
+## Machine-verifiable acceptance
+- `docs/UX_REVIEW.md` records actual skill names and inspected exact sources, why each was applicable, and what design decision it changed. Unknown/unavailable is explicitly marked instead of presented as used.
+- App flow: first-run level choice → card front → reveal translation/nuance → Know/Don't know → next → review → change track and back → progress persists.
+- Visible button alternatives to swipe gestures; VoiceOver and Dynamic Type; safe areas; reduced motion.
+- Native source changes link back to the product spec. A screenshot is not a functional test. Domain tests, Xcode build, Simulator and real iPhone are reported separately.
+
+## Local Codex skill discovery guide (not an installation instruction)
+First use Codex's own configured skill inventory, then the canonical root paths that the local Codex environment actually exposes. Common locations such as `~/.codex/skills` or `~/.agents/skills` are *hints only*, not evidence of availability. A `SKILL.md` discovered in an unrelated ChatGPT environment does not count as a local Codex skill. If no design skills are accessible, stop the **skill-dependent design decision**, identify the missing capability, and continue only independent verified engineering work.
